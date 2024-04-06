@@ -1,0 +1,49 @@
+{
+  "name": "radium-ui-kit",
+  "version": "1.0.0",
+  "description": "---  ### Дока доступна по ссылке - <a href=\"https://wiki.yandex.ru/frontend/ui-kit-flow/ \">тык</a>",
+  "main": "index.ts",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radium-rtf/radium-ui-kit.git"
+  },
+  "author": "v1ab1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/radium-rtf/radium-ui-kit/issues"
+  },
+  "homepage": "https://github.com/radium-rtf/radium-ui-kit#readme",
+  "dependencies": {
+    "@radix-ui/themes": "^3.0.2",
+    "react-jss": "^10.10.0"
+  },
+  "devDependencies": {
+    "@types/copy-webpack-plugin": "^10.1.0",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.10",
+    "@types/webpack": "^5.28.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "css-loader": "^6.7.3",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2",
+    "prettier": "3.2.5",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.3"
+  }
+}
