@@ -5,6 +5,7 @@ import {Icon} from '../Icon'
 import {useDrop} from './useDrop'
 import {SmallIcon} from '../SmallIcon'
 
+
 type InputFileProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> & {
   allowedFileTypes?: string[]
   fileList?: FileList
