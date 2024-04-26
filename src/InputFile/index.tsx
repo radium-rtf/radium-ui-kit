@@ -7,18 +7,18 @@ import {SmallIcon} from '../SmallIcon'
 import React from 'react'
 
 export enum FileType {
-  zip = 'zip',
-  jpg = 'jpg',
-  jpeg = 'jpeg',
-  png = 'png',
-  mp4 = 'mp4',
-  gif = 'gif',
-  doc = 'doc',
-  docx = 'docx',
-  ppt = 'ppt',
-  pptx = 'pptx',
-  txt = 'txt',
-  pdf = 'pdf',
+  zip = '.zip',
+  jpg = '.jpg',
+  jpeg = '.jpeg',
+  png = '.png',
+  mp4 = '.mp4',
+  gif = '.gif',
+  doc = '.doc',
+  docx = '.docx',
+  ppt = '.ppt',
+  pptx = '.pptx',
+  txt = '.txt',
+  pdf = '.pdf',
 }
 
 type InputFileProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> & {
@@ -58,7 +58,7 @@ export const InputFile: FC<InputFileProps> = ({
     } else {
       const names: string[] = []
       for (const file of files) {
-        if (!allowedFileTypes?.some((type) => type === file.name.split('.')[1])) {
+        if (!allowedFileTypes?.some((type) => type === `.${file.name.split('.')[1]}`)) {
           setIsError(true)
           return
         }
@@ -127,7 +127,7 @@ export const InputFile: FC<InputFileProps> = ({
           inputChangeHandler(e)
         }}
         type='file'
-        accept={allowedFileTypes ? allowedFileTypes.map((type) => `.${type}`).join() : undefined}
+        accept={allowedFileTypes ? allowedFileTypes.join() : undefined}
         className='hidden'
         {...props}
       />
