@@ -4,25 +4,9 @@ import cn from 'classnames'
 import {Icon} from '../Icon'
 import {useDrop} from './useDrop'
 import {SmallIcon} from '../SmallIcon'
-import React from 'react'
-
-export enum FileType {
-  zip = '.zip',
-  jpg = '.jpg',
-  jpeg = '.jpeg',
-  png = '.png',
-  mp4 = '.mp4',
-  gif = '.gif',
-  doc = '.doc',
-  docx = '.docx',
-  ppt = '.ppt',
-  pptx = '.pptx',
-  txt = '.txt',
-  pdf = '.pdf',
-}
 
 type InputFileProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> & {
-  allowedFileTypes?: FileType[]
+  allowedFileTypes?: string[]
   fileList?: FileList
   onFileListChange?: (fileList: FileList | null) => void
 }
@@ -43,6 +27,10 @@ export const InputFile: FC<InputFileProps> = ({
   const {isDraggable, ref} = useDrop()
   ref.current = document
 
+  const getFileExtension = (filenames: string) => {
+    return filenames.split('.').pop()
+  }
+
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.files = fileList
@@ -58,7 +46,7 @@ export const InputFile: FC<InputFileProps> = ({
     } else {
       const names: string[] = []
       for (const file of files) {
-        if (!allowedFileTypes?.some((type) => type === `.${file.name.split('.')[1]}`)) {
+        if (!allowedFileTypes?.some((type) => type === `.${getFileExtension(file.name)}`)) {
           setIsError(true)
           return
         }
